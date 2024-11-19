@@ -12,7 +12,6 @@
 </template>
 
 <script>
-// import Topbar from './Topbar.vue';
 import Hero from '../components/Hero.vue'
 import TopCategory from '../components/TopCategory.vue'
 import Midbanner from '../components/Midbannner.vue'
@@ -21,7 +20,6 @@ import WhyChoose from '../components/WhyChoose.vue';
 import Features from '../components/Features.vue'
 import Foundation from '../components/Foundation.vue'
 import Testimonials from '../components/Testimonials.vue'
-// import Footer from './Footer.vue'
 export default {
   name: 'Home',
   components: {

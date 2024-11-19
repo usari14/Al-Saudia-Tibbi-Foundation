@@ -9,7 +9,8 @@ module.exports = {
       backgroundImage: {
         'foundation-bg': 'url(/src/assets/foundation.jpg)', 
         'whychoose-bg': 'url(/src/assets/whychoose.png)',
-        'comms-bg': 'url(/src/assets/comms.png)'
+        'comms-bg': 'url(/src/assets/comms.png)',
+        'aboutusbg': 'url(/src/assets/aboutusbg.png)'
       }
     },
   },

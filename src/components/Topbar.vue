@@ -26,10 +26,12 @@
                     <li><img src="../assets/heart.png" alt=""></li>
                     <li>
                         <div class="relative">
-                            <img src="../assets/cart.png" alt="">
-                            <p
-                                class="absolute -right-1 -top-2 bg-red-500 text-[8px] py-[2px] px-1  rounded-full text-white">
-                                0</p>
+                            <router-link to="/cart">
+                                <img src="../assets/cart.png" alt="">
+                                <p
+                                    class="absolute -right-1 -top-2 bg-red-500 text-[8px] py-[2px] px-1  rounded-full text-white">
+                                    0</p>
+                            </router-link>
                         </div>
                     </li>
                 </ul>
@@ -80,23 +82,30 @@
                     <ul
                         class=" bg-red-500 md:bg-transparent font-bold flex flex-col p-4 md:p-0 mt-4 lg:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                         <li>
-                            <a href="#" class="block py-2 pr-4 text-[#FFFFFF] text-sm  lg:text-[16px] " aria-current="page">HOME</a>
+                            <router-link to="/" class="block py-2 pr-4 text-[#FFFFFF] text-sm  lg:text-[16px] "
+                                aria-current="page">HOME</router-link>
                         </li>
                         <li class="relative pl-4 ">
-                            <a href="#" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">ABOUT US</a>
-                            <span class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
+                            <router-link to="/about"
+                                class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">ABOUT US</router-link>
+                            <span
+                                class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
                         <li class="relative pl-4">
-                            <a href="#" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">PRODUCTS</a>
-                            <span class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
+                            <router-link to="/products"
+                                class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">PRODUCTS</router-link>
+                            <span
+                                class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
                         <li class="relative pl-4">
                             <a href="#" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">MEDIA</a>
-                            <span class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
+                            <span
+                                class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
                         <li class="relative pl-4">
                             <a href="#" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">CONTACT US</a>
-                            <span class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
+                            <span
+                                class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
                     </ul>
                 </div>
