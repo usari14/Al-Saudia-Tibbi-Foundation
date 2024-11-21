@@ -4,6 +4,9 @@ import About from "./pages/About.vue";
 import NewProducts from "./pages/NewProducts.vue";
 import ProductDetailPage from './components/ProductDetailPage.vue'
 import CartPage from "./pages/CartPage.vue";
+import CheckoutPage from "./pages/CheckoutPage.vue";
+import ContactUsPage from "./pages/ContactUsPage.vue";
+import MediaPage from "./pages/MediaPage.vue";
 
 const routes = [
     {
@@ -31,6 +34,21 @@ const routes = [
         path: '/cart',
         name: 'CartPage',
         component: CartPage,
+    },
+    {
+        path: '/checkout',
+        name: 'CheckoutPage',
+        component: CheckoutPage,
+    },
+    {
+        path: '/contactus',
+        name: 'ContactUsPage',
+        component: ContactUsPage,
+    },
+    {
+        path: '/media',
+        name: 'MediaPage',
+        component: MediaPage,
     }
 ];
 

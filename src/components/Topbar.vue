@@ -98,12 +98,12 @@
                                 class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
                         <li class="relative pl-4">
-                            <a href="#" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">MEDIA</a>
+                            <router-link to="/media" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">MEDIA</router-link>
                             <span
                                 class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
                         <li class="relative pl-4">
-                            <a href="#" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">CONTACT US</a>
+                            <router-link to="/contactus" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">CONTACT US</router-link>
                             <span
                                 class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
