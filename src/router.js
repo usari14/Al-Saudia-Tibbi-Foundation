@@ -7,6 +7,7 @@ import CartPage from "./pages/CartPage.vue";
 import CheckoutPage from "./pages/CheckoutPage.vue";
 import ContactUsPage from "./pages/ContactUsPage.vue";
 import MediaPage from "./pages/MediaPage.vue";
+import SearchPage from "./pages/SearchPage.vue";
 
 const routes = [
     {
@@ -49,6 +50,11 @@ const routes = [
         path: '/media',
         name: 'MediaPage',
         component: MediaPage,
+    },
+    {
+        path: '/search',
+        name: 'SearchPage',
+        component: SearchPage,
     }
 ];
 

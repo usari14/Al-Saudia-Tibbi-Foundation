@@ -14,11 +14,12 @@
                 <img class="absolute md:-top-7 top-0 w-[120px] md:w-[150px] p-4" src="../assets/logo.png" alt="">
             </div>
             <div class="flex items-center gap-6">
-                <form action="" class="hidden md:flex">
-                    <input type="text" placeholder="Search any Product here..."
-                        class="lg:w-[550px] md:w-[300px] p-2 rounded-l-lg focus:outline-none focus:ring-0" />
-                    <button class="text-white px-4 py-2 bg-[#D5362B] rounded-r-lg">
-                        <img src="../assets/search.png" alt="">
+                <form @submit.prevent="goToSearchPage" class="items-center hidden md:flex">
+                    <input v-model="searchQuery" type="text" placeholder="Search any Product here..."
+                        class="lg:w-[550px] md:w-[300px] p-2 rounded-l-lg focus:outline-none focus:ring-0 border border-gray-300" />
+                    <button type="submit"
+                        class="px-4 py-2 bg-[#D5362B] text-white rounded-r-lg flex items-center justify-center">
+                        <img src="../assets/search.png" alt="Search" class="w-5 h-5" />
                     </button>
                 </form>
                 <ul class="flex gap-6">
@@ -30,7 +31,7 @@
                                 <img src="../assets/cart.png" alt="">
                                 <p
                                     class="absolute -right-1 -top-2 bg-red-500 text-[8px] py-[2px] px-1  rounded-full text-white">
-                                    0</p>
+                                    {{ cartCount }}</p>
                             </router-link>
                         </div>
                     </li>
@@ -98,12 +99,14 @@
                                 class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
                         <li class="relative pl-4">
-                            <router-link to="/media" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">MEDIA</router-link>
+                            <router-link to="/media"
+                                class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">MEDIA</router-link>
                             <span
                                 class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
                         <li class="relative pl-4">
-                            <router-link to="/contactus" class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">CONTACT US</router-link>
+                            <router-link to="/contactus"
+                                class="block py-2 px-4 text-[#FFFFFF] text-sm  lg:text-[16px] ">CONTACT US</router-link>
                             <span
                                 class="absolute left-0 top-1/2 transform -translate-y-1/2 h-5 w-px bg-white hidden lg:block"></span>
                         </li>
@@ -117,8 +120,19 @@
 </template>
 
 <script>
+import { cartStore } from '../Store/store';
 export default {
     name: 'Topbar',
+    computed: {
+        cartCount() {
+            return cartStore.cartCount; // Reactive cart count
+        },
+        goToSearchPage() {
+            if (this.searchQuery.trim() !== '') {
+                this.$router.push({ path: '/search', query: { query: this.searchQuery } });
+            }
+        }
+    }
 }
 </script>
 

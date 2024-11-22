@@ -59,12 +59,12 @@
                     </select>
                 </div>
                 <p class="text-[20px] text-center lg:text-left font-medium leading-7 mb-4">Showing <span>{{ currentPage
-                        * pageSize + 1 }}–{{ (currentPage + 1) * pageSize }}</span> of <span>{{ products.length
+                    * pageSize + 1 }}–{{ (currentPage + 1) * pageSize }}</span> of <span>{{ products.length
                         }}</span> results</p>
                 <div
                     class="products grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 lg:pt-10 pt-5 place-items-center">
                     <div class="product text-center" v-for="(product, index) in paginatedProducts" :key="index">
-                        <router-link :to="{ path: `/productsdetails/${index}`}" class="block">
+                        <router-link :to="{ path: `/productsdetails/${index}` }" class="block">
                             <div
                                 class="w-[290px] h-auto bg-white shadow-lg rounded-lg overflow-hidden flex flex-col border border-gray-300">
                                 <div class="w-full bg-[#EEF3F6] p-2 flex justify-center items-center">
@@ -72,7 +72,7 @@
                                         class="h-[233px] w-auto object-cover" />
                                 </div>
                                 <div class="w-full bg-[#fff] p-4 flex flex-col justify-between">
-                                    <button
+                                    <button @click.prevent="addToCart(product)"
                                         class="bg-[#D5362B] text-white px-4 py-2 rounded-md mb-4 transition-colors">Add
                                         to Cart</button>
                                     <h3 class="text-xl font-semibold mb-2">{{ product.name }}</h3>
@@ -127,7 +127,7 @@
 
 <script>
 import { AllProducts } from '../DataSet/AllProducts';
-
+import { cartStore } from '../Store/store';
 
 export default {
     name: 'ProductsComp',
@@ -155,6 +155,9 @@ export default {
         changePage(page) {
             if (page < 0 || page >= this.totalPages) return;
             this.currentPage = page;
+        },
+        addToCart(product) {
+            cartStore.addToCart(product); // Add product to cart
         }
     }
 };

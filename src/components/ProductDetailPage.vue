@@ -64,11 +64,12 @@
                 <hr class="h-[2px] bg-[#6B6B6B] w-full mb-2">
                 <div class="flex gap-5 flex-wrap sm:flex-nowrap">
                     <div class="flex items-center gap-0">
-                        <a href="#"
+                        <a href="#" @click.prevent="decrementQuantity"
                             class="flex justify-center items-center w-[50px] h-[40px] sm:w-[30px] sm:h-[50px] border border-gray-500 text-lg">-</a>
-                        <input type="text" name="quantity" id="quantity" placeholder="1"
+                        <input type="text" name="quantity" id="quantity" :value="quantity"
+                            @input="updateQuantity($event)"
                             class="w-16 h-[40px] sm:w-12 sm:h-[50px] text-center border bg-transparent border-gray-500">
-                        <a href="#"
+                        <a href="#" @click.prevent="incrementQuantity"
                             class="flex justify-center items-center w-[50px] h-[40px] sm:w-[30px] sm:h-[50px] border border-gray-500 text-lg">+</a>
                     </div>
                     <button class="bg-red-600 text-white px-8 py-3 rounded-md w-[300px] sm:w-auto">Add to Cart</button>
@@ -76,6 +77,7 @@
                         <img src="../assets//heart.png" class="h-6 sm:h-[18px]" alt="">
                     </div>
                 </div>
+
 
                 <hr class="h-[2px] bg-[#6B6B6B] w-full mb-2 mt-2">
                 <p class="text-lg font-medium text-[#616161]">Category: <span class="text-[#088642]">{{ product.category
@@ -146,13 +148,33 @@ export default {
     data() {
         return {
             product: null,
-            products: [], // Add products here
+            products: [],
+            quantity: 1,
         };
     },
     created() {
         this.product = AllProducts[this.id];
         this.products = AllProducts; // Assign all products
     },
+    methods: {
+        incrementQuantity() {
+            this.quantity += 1;
+        },
+        decrementQuantity() {
+            if (this.quantity > 1) {
+                this.quantity -= 1
+            }
+        },
+        updateQuantity() {
+            const value = parseInt(event.target.value, 10);
+            if (!isNaN(value) && value >= 1) {
+                this.quantity = value; 
+            } else {
+                this.quantity = 1;
+            }
+        }
+
+    }
 
 };
 

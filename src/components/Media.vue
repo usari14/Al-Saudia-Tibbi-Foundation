@@ -8,8 +8,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Breadcrumb Navigation -->
         <div class="container">
             <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center rtl:space-x-reverse">
@@ -118,19 +116,23 @@
                         <div class="grid grid-cols-1 lg:grid-cols-2 p-5 gap-5">
                             <div>
                                 <img src="../assets/video11.png" alt="">
-                                <p class="text-[30px] font-semibold text-center md:text-left lg:text-center">Muscular Strength</p>
+                                <p class="text-[30px] font-semibold text-center md:text-left lg:text-center">Muscular
+                                    Strength</p>
                             </div>
                             <div>
                                 <img src="../assets/video11.png" alt="">
-                                <p class="text-[30px] font-semibold text-center md:text-left lg:text-center">Muscular Strength</p>
+                                <p class="text-[30px] font-semibold text-center md:text-left lg:text-center">Muscular
+                                    Strength</p>
                             </div>
                             <div>
                                 <img src="../assets/video11.png" alt="">
-                                <p class="text-[30px] font-semibold text-center md:text-left lg:text-center">Muscular Strength</p>
+                                <p class="text-[30px] font-semibold text-center md:text-left lg:text-center">Muscular
+                                    Strength</p>
                             </div>
                             <div>
                                 <img src="../assets/video11.png" alt="">
-                               <p class="text-[30px] font-semibold text-center md:text-left lg:text-center">Muscular Strength</p>
+                                <p class="text-[30px] font-semibold text-center md:text-left lg:text-center">Muscular
+                                    Strength</p>
                             </div>
                         </div>
                         <nav aria-label="Page navigation example">
@@ -394,5 +396,4 @@ export default {
     left: 20px;
     top: 55%;
 }
-
 </style>
