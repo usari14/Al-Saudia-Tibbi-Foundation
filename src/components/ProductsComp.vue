@@ -11,15 +11,12 @@
         <nav class="flex" aria-label="Breadcrumb">
             <ol class="inline-flex items-center rtl:space-x-reverse">
                 <li class="inline-flex items-center">
-                    <router-link to="/"
-                        class="inline-flex items-center text-lg font-medium text-red-600 underline hover:text-red-400">
-                        Home
+                    <router-link to="/" class="inline-flex items-center text-lg font-medium text-red-600 underline hover:text-red-400">Home
                     </router-link>
                 </li>
                 <li aria-current="page">
                     <div class="flex items-center">
-                        <span class="ms-1 text-lg font-medium text-gray-500 md:ms-2 dark:text-gray-400">/
-                            Products</span>
+                        <span class="ms-1 text-lg font-medium text-gray-500 md:ms-2 dark:text-gray-400">/Products</span>
                     </div>
                 </li>
             </ol>
@@ -134,7 +131,7 @@ export default {
     data() {
         return {
             ProductCategories: [
-                'Clothing', 'Footwear', 'Accessories', 'Electronics', 'Furniture', 'Sports',
+                'Clothing', 'Footwear', 'Accessories', 'Electronics', 'Furniture', 'Sports', 'Food',
             ],
             products: AllProducts,
             currentPage: 0,

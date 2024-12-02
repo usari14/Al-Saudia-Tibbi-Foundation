@@ -12,7 +12,7 @@
           <div
             class="w-[290px] h-auto bg-white shadow-lg rounded-lg overflow-hidden flex flex-col border border-gray-300">
             <div class="w-full bg-[#EEF3F6] p-2 flex justify-center items-center">
-              <img :src="product.image" alt="Product Image" class="h-[233px] w-auto object-cover" />
+              <img :src="`http://localhost:8080/assets/${product.image}`" alt="Product Image" class="h-[233px] w-auto object-cover" />
             </div>
             <div class="w-full bg-[#fff] p-4 flex flex-col justify-between">
               <button @click.prevent="addToCart(product)"
@@ -34,24 +34,55 @@
   </div>
 </template>
 
-<script>
-import { AllProducts } from '../DataSet/AllProducts';
+  <script>
+  // import { AllProducts } from '../DataSet/AllProducts';
+  // import { cartStore } from '../Store/store'
+
+  // export default {
+  //   name: 'FeatureProducts',
+  //   data() {
+  //     return {
+  //       products: AllProducts
+  //     };
+  //   },
+  //   methods: {
+  //     addToCart(product) {
+  //       cartStore.addToCart(product); // Add product to cart
+  //     }
+  //   }
+  // };
+
+  // FeatureProducts.vue
+import axios from 'axios';
 import { cartStore } from '../Store/store'
+// import { cartStore } from '../Store/store'; // Ensure this is correctly set up
 
 export default {
   name: 'FeatureProducts',
   data() {
     return {
-      products: AllProducts
+      products: [] // Initialize as an empty array
     };
   },
   methods: {
+    async fetchProducts() {
+      try {
+        const response = await axios.get('http://localhost:8080/api/products'); // Call your backend API
+        this.products = response.data; 
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    },
     addToCart(product) {
-      cartStore.addToCart(product); // Add product to cart
+      cartStore.addToCart(product);
     }
+  },
+  mounted() {
+    this.fetchProducts();
   }
 };
-</script>
+
+  </script>
 
 <style scoped>
 /* You can add additional styles if needed */
